@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 1. How to find duplicate elements in array in js -->
+    <script>
+        // const arrNumber = ["monday", "tuesday", "wednsday", "thursday", "friday", "saturday", "monday", 2, "friday", 3, 2, 4, 5, 3]
+        // const duplicates = arrNumber.filter((ele, index, arr) => arr.indexOf(ele) !== index)
+        // console.log(duplicates);
+
+    </script>
+
+    <!-- 2. How to find Max and Min value in a given Array -->
+    <script>
+        // Max value
+        // const arrNumber = [1, 9, 887, -65, 6500, 999];
+        // const maxFunction = (arr)=>{
+        //     return arr.reduce(function(pre, cur){
+        //         return pre>cur ? pre : cur;
+        //     })
+        // }
+        // console.log(maxFunction(arrNumber));
+
+        // const arrNumber = [1, 9, 887, -65, 6500, 999];
+        // const value = Math.max(...arrNumber)
+        // console.log(value);
+        
+        // Min value
+        // const arrNumber1 = [1, 9, 887, -65, 6500, 999];
+        // const maxFunction1 = (arr)=>{
+        //     return arr.reduce(function(pre, cur){
+        //         return pre<cur ? pre : cur;
+        //     })
+        // }
+        // console.log(maxFunction1(arrNumber1));
+
+        // const arrNumber1 = [1, 9, 887, -65, 6500, 999];
+        // const value1 = Math.min(...arrNumber1)
+        // console.log(value1);
+    </script>
+
+    <!-- 3. How to find second largest value, and remove first largest value in array -->
+    <script>
+        // const intArray = [2, 8, 9, 7];
+        // const largestValue = (arr) => {
+        //     firstLargestValue = Math.max(...arr)
+        //     index = arr.indexOf(firstLargestValue)
+        //     arr.splice(index, 1)
+        //     secondLargestValue = Math.max(...arr)
+        //     return(secondLargestValue);
+        // }
+        // console.log(largestValue(intArray));
+
+    </script>
+
+    <!-- 4. What is difference between fiter() and find() method in js
+    ans: filter() method returns the matched values in an array from the collection.
+         find() method returns the value that matches from the collection once it matches the value in findings, it will not check the remaining values in the array collection -->
+    <script>
+        const empArr = [
+            { name: "king", age: 42},
+            { name: "ali", age: 32},
+            { name: "ahmad", age: 22},
+            { name: "zain", age: 62},
+            { name: "ayesha", age: 52},
+            { name: "hafsa", age: 28},
+            { name: "sadi", age: 27},
+            { name: "rohma", age: 26},
+            { name: "masooma", age: 25},
+        ]
+
+        // solution with filter
+        // const filteredItem = empArr.filter((item)=>{
+        //     return item.age > 30
+        // })
+        // console.log(filteredItem);
+
+        // add on
+        // const filteredItem = empArr.sort((user1, user2) => user1.age < user2.age ? -1 : 1 ).filter((item)=>{
+        //     return item.age > 30
+        // })
+        //  console.log(filteredItem)
+
+
+
+        // solution with find
+        // const findItem = empArr.find((item)=>{
+        //     return item.age > 30
+        // })
+        // console.log(findItem);
+
+
+
+    </script>
+
+    <!-- 5. how to find the missing number in a given integer array of 1 to 10 -->
+    <script>
+        const arrName = [1,2,3,4,5,6,9,10]
+        const missArray = []
+
+        const missingValue = (arr) => {
+            const minValue = Math.min(...arr)
+            const maxValue = Math.max(...arr)
+
+            for(let i=minValue; i<maxValue; i++){
+                if(arr.indexOf(i)<0){
+                    missArray.push(i)
+                }
+            }
+            return (missArray)
+        } 
+        // console.log(missingValue(arrName));
+    </script>
+
+    <!-- 6. how to find even or odd number in a given array in js -->
+    <script>
+        // for even
+        // const numbers = [1,2,3,8,9,12,16]
+        // const even = numbers.filter((item)=>{
+        //     return item%2 === 0;
+        // })
+        // console.log('even numbers',even);
+
+        // for odd
+        // const numbers1 = [1,2,3,8,9,12,16]
+        // const odd = numbers1.filter((item)=>{
+        //     return item%2 !== 0;
+        // })
+        // console.log('even numbers',odd);
+    </script>
+
+    <!-- 7. how to find the sum of all elements in a given array in js -->
+    <script>
+
+        // using simple method
+        let nums = [1,9,6,4];
+        let l = nums.length;
+        let totalSum = 0;
+        for (let i = 0; i < nums.length; i++) {
+            totalSum += nums[i];  //totalSum = totalSum + nums[i]
+        }
+        // console.log(totalSum);
+
+        // using reduce method
+        let arrName1 = [1,9,6,4]
+        let sumOfNumbers = (arr) => {
+            return arr.reduce((pre, cur)=>{
+                return pre + cur;
+            })
+        }
+        // console.log(sumOfNumbers(arrName1));
+
+        // using reduce method
+        let numb = [1,9,6,4];
+        let nam = numb.reduce((acc, val) => {
+            return acc + val;
+        }, 0)
+        // console.log(nam);
+    </script>
+
+    <!-- 8. how to find factorial (n!) of a given number in js
+    ans: *The factorial of number is the product of all number from 1 to that number
+         *for ex : factorial of 5 is equal to 5!=1*2*3*4*5=120
+         *factorial of negative number is not possible -->
+    <script>
+        // const inputNum = prompt("please enter number")
+        // let factorial = 1;
+
+        // if(inputNum<0){
+        //     console.log(`factorial of ${inputNum} is not possible`);
+        // }
+        // else{
+        //     for(let i=1; i<=inputNum; i++){
+        //         factorial *= i 
+        //         // factorial = factorial * i;
+        //     }
+        //     console.log(`factorial of ${inputNum} is ${factorial}`);
+        // }
+    </script>
+
+    <!-- 9. how to find prime number in js -->
+    <script>
+        // let number = prompt("Enter number");
+
+        // if (number == 1){
+        //     console.log(`${number} is neither prime nor composite`);
+        // } else if(number < 1){
+        //     console.log(`prime number of ${number} is not possible`);
+        // } else {
+        //     let result = `${number} is prime number`;
+
+        //     for(let i = 2; i < number; i++){
+        //         if(number % i == 0){
+        //             result = `${number} is not prime number`;
+        //             break;
+        //         }
+        //     }
+
+        //     console.log(result);
+        // }
+    </script>
+
+    <!-- 10. how to find vowels from string in js -->
+    <script>
+        // let string = prompt("enter number")
+        // string = string.toLocaleLowerCase()
+        // if(string == 'a' || string == 'e' || string == 'i' || string == 'o' || string == 'u'){
+        //     console.log(`${string} is vowel`);
+        // }
+        // else{
+        //     console.log(`${string} is not vowel`);
+        // }
+
+        // another method
+        // let string = prompt("enter number")
+        // const vowels = ['a', 'e', 'i', 'o', 'u']
+        // const countVowel=(str)=>{
+        //     let count = 0;
+        //     for(let letter of str.toLowerCase()){
+        //         if(vowels.includes(letter)){
+        //             count++
+        //         }
+        //     }
+        //     return count;
+        // }
+        // console.log(countVowel(string));
+    </script>
+
+    <!-- 11. how to reverse a string in js -->
+    <script>
+        // const reverseString=(str)=>{
+        //     let strToArray = str.split("")
+        //     let arrReverse = strToArray.reverse()
+        //     let strReverse = arrReverse.join("")
+        //     return strReverse
+        // }
+        // console.log(reverseString('butter is best'));
+        
+
+        // another way 
+        // let str = prompt()
+        // const reverseString1=(str)=>{
+        //     let strRev = str.split("").reverse().join("")
+        //     return strRev
+        // }
+        // console.log(reverseString1(str));
+
+        //not all sentence but only words reverse
+        // let str1 = "saare jaha se achha";
+        
+        // let savedStr = str1.split(" ").map(function(word){
+        //     return word.split("").reverse().join("")
+        // })
+        // console.log(savedStr.join(" "));
+    </script>
+
+    <!-- 6. write js function that reverse a number -->
+    <script>
+        // logical way
+        // function reverseKaro (num) {
+        //     let rev = 0;
+        //     while (num > 0) {
+        //         let rem = num % 10;
+        //         rev = rev * 10 + rem;
+        //         num = Math.floor(num/10);
+        //     }
+        //     return rev;
+        // }
+        // console.log(reverseKaro(12345));
+
+
+        // Easy way built in methods 
+        // function reverseNum (num) {
+        //     return Number(num.toString().split("").reverse().join(""))
+        // }
+        // console.log(reverseNum(12));
+        // console.log(reverseNum(4567));
+    </script>
+
+    <!-- 12. how to find palindrome in js
+    a word, verse, or sentence (such as "madam") or a number (such as 1881) that reads the same backward or forward -->
+    <script>
+        //  let string = prompt("Enter value");
+        //  string = string.toLowerCase();
+
+        //  const palindromeFind=(str)=>{
+        //     //reverse string 
+        //     let reverseStr = str.split("").reverse().join("");
+        //     if (reverseStr === str){
+        //         return true;
+        //     } else {
+        //         return false;
+        //     }
+        //  }
+        //  console.log(palindromeFind(string));
+    </script>
+
+    <!-- 13. how to swap two variable without using third variable in js -->
+    <script>
+        // let a = 55;
+        // let b = 20;
+
+        // with using third variable
+        // let temp = a;
+        // a = b;
+        // b = temp;
+        // console.log(`value of a is ${a} and value of b is ${b}`);
+
+        // without third variable
+        // [a, b] = [b, a]
+        // console.log(`value of a is ${a} and value of b is ${b}`);
+
+    </script>
+
+    <!-- 14. how to merge two arrays and sort them in js -->
+    <script>
+        // const arr1 = ['1','8','9']
+        // const arr2 = ['45','7','19']
+        // const arr1 = [1,8,9]
+        // const arr2 = [45,7,19]
+
+        // using concat
+        // const finalArr = arr1.concat(arr2);
+        // const sortedArr = finalArr.sort(function(a,b){
+        //     return a-b
+        // })
+        // console.log(sortedArr);
+
+        // using spread operator
+        // const result = [...arr1, ...arr2];
+        // const sortedArr2 = result.sort(function(a, b){
+        //     return a - b
+        // })
+        // console.log(result);
+        // console.log(sortedArr2);
+    </script>
+
+    <!-- 15. how to find factors of a given integer in js -->
+    <script>
+        // const num = prompt("please enter positive number")
+        // console.log(`factors of ${num}`);
+
+        // for (let i = 0; i <= num; i++){
+        //     if (num %i == 0){
+        //         console.log(i);
+        //     }
+        // }
+        // for negative value do if else condition
+    </script>
+
+    <!-- 16. calculator -->
+    <script>
+        // const operator = prompt("please select operator either + - / *")
+        // const num1 = parseFloat(prompt("enter num 1"))
+        // const num2 = parseFloat(prompt("enter num 2"))
+
+        // with if else
+        // if (operator == '+') {
+        //     result = num1 + num2;
+        // } else if (operator == '-') {
+        //     result = num1 - num2;
+        // } else if (operator == '*') {
+        //     result = num1 * num2;
+        // } else if (operator == '/') {
+        //     result = num1 / num2;
+        // }
+
+        // console.log(`${num1} ${operator} ${num2} = ${result}`);
+
+        // with switch statement
+        // switch (operator) {
+        //     case '+':
+        //         result = num1 + num2;               
+        //         break;
+        //     case '-':
+        //         result = num1 - num2;               
+        //         break;
+        //     case '*':
+        //         result = num1 * num2;               
+        //         break;
+        //     case '/':
+        //         result = num1 / num;                
+        //         break;
+        
+        //     default:
+        //         break;
+        // }
+        // console.log(`${num1} ${operator} ${num2} = ${result}`);
+
+
+    </script>
+
+    <!-- 17. how to compare two arrays are equal or not in js -->
+    <script>
+        // let arr1 = [2,9,6,8,4]
+        // let arr2 = [4,8,6,9,2]
+
+        // const isArrSame = arr1.length == arr2.length &&
+        // indexOf method return -1 if element is not exit in array
+        // every method check each and every element fullfill the condition exist in array
+
+        // arr1.every((curEle)=>{
+        //     if (arr2.indexOf(curEle)>-1){
+        //         return(curEle=[arr2.indexOf(curEle)])
+        //     }
+        // })
+        
+        // console.log(isArrSame);
+    </script>
+
+    <!-- 18. how to find intersection of two arrays/sets in js -->
+    <script>
+        // let arr1 = [2,9,6,8,4,4,4];
+        // let arr2 = [4,8,6,9,12];
+
+        // let intersectionArr = arr1.filter((ele)=>{
+        //     return arr2.includes(ele)
+        // })
+        // console.log([...new Set(intersectionArr)]);
+    </script>
+
+    <!-- 19. how to find union of two arrays/set in js -->
+    <script>
+        // let arr1 = [1,2,6,8,17];
+        // let arr2 = [4,8,6,19,12,17];
+
+        // let unionArr = [...arr1, ...arr2]
+        // console.log(unionArr);
+        // console.log([... new Set(unionArr)]);
+    </script>
+
+    <!-- 20. how to convert celsius to fahrenheit or fahrenheit to celsius in js
+
+    celsius to fahrenheit formula
+    fahrenheit = celsius * 1.8 + 32
+
+    fahrenheit to celsius formula
+    celsius = 5/9 * (fahrenheit - 32) -->
+
+    <script>
+        // celsius to fahrenheite
+        // let input = prompt("please enter value to convert")
+        // let celsiusToFahrenheite = input * 1.8 + 32;
+        // console.log(celsiusToFahrenheite);
+
+        // // fahrenheite to celsius
+        // let fahrenheitToCelsius = 5/9*(input - 32)
+        // console.log(fahrenheitToCelsius);
+    </script>
+
+    <!-- 21. how to convert kilometer(km) in to miles in js
+    1 km = 0.621371 factor
+
+    miles = km*factor -->
+
+    <script>
+        // kilometer to miles
+        // let userInput = prompt("please enter value to convert in to miles")
+        // const factor = 0.621371;
+        // const kilometerToMiles = userInput * factor;
+        // console.log(kilometerToMiles);
+        // console.log(`${userInput} km is = ${kilometerToMiles} miles`);
+    </script>
+
+    <!-- 22. program to convert first letter of a string in to uppercase in js -->
+    <script>
+        // let inputStr = prompt("Enter string to capitalize");
+
+        // const firstLetterCapital = (str) => {
+        //     let newStr = str.split(" ");
+        //     let newArr = newStr.map((value)=>{
+        //         return value.charAt(0).toUpperCase() + value.slice(1);
+        //     })
+        //     return newArr.join(" ");
+        // }
+        // console.log(firstLetterCapital(inputStr));
+    </script>
+
+    <!-- 23. program to find fibonacci sequence in js -->
+    <script>
+        // let a = 0;
+        // let b = 1;
+
+        // for (let i = 0; i <= 15; i++) {
+        //     let temp = a + b;
+        //     a = b
+        //     b = temp
+        //     console.log(temp);
+        // }
+    </script>
+
+    <!-- 24. program to print star and number patterns right triangle, pyramid and diamond shape in js -->
+    <script>
+        // for right triangle
+        // for (let i = 1; i <= 6; i++) {
+        //     for (let j = 1; j <= i; j++) {
+        //         document.write("*"+"&nbsp;&nbsp;")
+        //     }
+        //     document.write("<br/>")
+        // }
+        
+        // for pyramid
+        // for (let i = 1; i <= 6; i++) {
+        //     for (let k = 1; k <= 6-i; k++) {
+        //         document.write("&nbsp;&nbsp;")
+        //     }
+        //     for (let j = 1; j <= i; j++) {
+        //         document.write("*"+"&nbsp;&nbsp;")
+        //     }
+        //     document.write("<br/>")
+        // }
+
+        // for diamond
+        // for (let i = 1; i <= 6; i++) {
+        //     for (let k = 1; k <= 6-i; k++) {
+        //         document.write("&nbsp;&nbsp;")
+        //     }
+        //     for (let j = 1; j <= i; j++) {
+        //         document.write(i+"&nbsp;&nbsp;")
+        //     }
+        //     document.write("<br/>")
+        // }
+        // for (let i = 1; i <= 6; i++) {
+        //     for (let k = 1; k <= i; k++) {
+        //         document.write("&nbsp;&nbsp;")
+        //     }
+        //     for (let j = 1; j <= 6 - i; j++) {
+        //         document.write(i+"&nbsp;&nbsp;")
+        //     }
+        //     document.write("<br/>")
+        // }
+
+        // for square
+        // for (let i = 1; i <= 6; i++) {
+        //     for (let k = 1; k <= 6-i; k++) {
+        //         document.write("*"+"&nbsp;&nbsp;")
+        //     }
+        //     for (let j = 1; j <= i; j++) {
+        //         document.write("*"+"&nbsp;&nbsp;")
+        //     }
+        //     document.write("<br/>")
+        // }
+    </script>
+
+    <!-- 25. program to find number of occurences of a character in string in js -->
+    <script>
+        // let string = prompt("Please Enter string")
+        // let letter = prompt("Please Enter letter")
+        // let strLen = string.length;
+        // let counter = 0;
+
+        // for (let i = 0; i <= strLen; i++) {
+        //     if (string[i] == letter) {
+        //         counter ++;
+        //     }
+        // }
+        // console.log(`In ${string} occurence of ${letter} is ${counter} times`);
+    </script>
+
+    <!-- 26. program to print the table of any user defined number using function in js -->
+    <script>
+        // const table = (number) => {
+        //     for (let i = 1; i <= 10; i++) {
+        //         let res = i * number
+        //         console.log(`${number} x ${i} = ${res}`);
+        //     }
+        // }
+
+        // table(16)
+        // table(12)
+    </script>
+
+    <!-- 27. program to check armstrong number in js -->
+    <script>
+        // let number = prompt("please enter number")
+        // let temp = number;
+        // let lenghtOfDigit = number.toString().length;
+        // let sum = 0;
+
+        // while (temp > 0) {
+        //     //371/10 = 1 modules
+        //     let digit = temp % 10
+        //     // console.log(digit);
+        //     sum+=digit**lenghtOfDigit;  //sum = digits power to its length times
+        //     // console.log("SUM"+sum);
+        //     temp = parseInt(temp/10)
+        //     // console.log(temp);
+        //     // console.log("-----------");
+        // }
+
+        // if (sum == number) {
+        //     console.log(`${number} is an Armstrong number`);
+        // } else {
+        //     console.log(`${number} is not a Armstrong number`);
+        // }
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 1. Given a string, reverse each word in the sentence -->
+    <script>
+        // let str1 = "saare jaha se achha";
+        
+        // let savedStr = str1.split(" ").map(function(word){
+        //     return word.split("").reverse().join("")
+        // })
+        // console.log(savedStr.join(" "));
+    </script>
+
+    <!-- 2. how to check if an object is an array or not -->
+    <script>
+        // function checkArray(ele) {
+        //     return Array.isArray(ele);
+        // }
+
+        // console.log(checkArray([]));
+        // console.log(checkArray({}));
+    </script>
+
+    <!-- 3. how to empty an array in js -->
+    <script>
+        // let arr = [1,2,3,4,5,6];
+        // console.log(arr);
+
+        // arr.length = 0
+        // console.log(arr);
+    </script>
+
+    <!-- 4. how would you check if a number is an integer -->
+    <script>
+        let a = 12;
+
+        // if (a % 1 === 0) {
+        //     console.log("integer");
+        // } else {
+        //     console.log("not a integer");
+        // }
+    </script>
+
+    <!-- 5. make array duplicate [1,2,3,4] = [1,2,3,4,1,2,3,4] -->
+    <script>
+        // function duplicate(arr) {
+        //     return arr.concat(arr);
+        // }
+
+        // console.log(duplicate([1,2,3,4,5]));
+    </script>
+
+    functions
+    <!-- 6. write js function that reverse a number -->
+    <script>
+        // logical way
+        // function reverseKaro (num) {
+        //     let rev = 0;
+        //     while (num > 0) {
+        //         let rem = num % 10;
+        //         rev = rev * 10 + rem;
+        //         num = Math.floor(num/10);
+        //     }
+        //     return rev;
+        // }
+        // console.log(reverseKaro(12345));
+
+
+        // Easy way built in methods 
+        // function reverseNum (num) {
+        //     return Number(num.toString().split("").reverse().join(""))
+        // }
+        // console.log(reverseNum(12));
+        // console.log(reverseNum(4567));
+    </script>
+
+    <!-- 7. write a function that cheks whether a passed string is palindrome or not -->
+    <script>
+        // function stringPalChecker (str) {
+        //     let reversed = str.split("").reverse().join("");
+        //     if (reversed === str) {
+        //         return true;
+        //     } else {
+        //         return false
+        //     }
+        // }
+
+        //with ternary operator
+        // function stringPalChecker (str) {
+        //     let reversed = str.split("").reverse().join("");
+        //     return reversed === str ? true : false
+        //     // return reversed === str;
+        // }
+
+        // console.log(stringPalChecker("poop"));
+        // console.log(stringPalChecker("loop"));
+    </script>
+
+    <!-- 8. write a js function that returns a passed string with letters in alphabetical order -->
+    <script>
+        // function strAlphabeticalOrder (str) {
+        //     return str.split("").sort().join("")
+        // }
+        // console.log(strAlphabeticalOrder("apple"));
+        // console.log(strAlphabeticalOrder("javascript"));
+    </script>
+
+    <!-- 9. write a js function that accepts a string as a parameter and converts the first letter of each word of the string in upper case -->
+    <script>
+        //40m
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

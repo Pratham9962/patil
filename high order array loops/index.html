@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js"></script>
+</head>
+
+<body>
+
+    <!-- Q. 1 Calculating length of Array without using length -->
+    <script>
+        let a = [10, 20, 60, 70];
+        // console.log(a.length);
+
+        // console.log(a[0]);
+        // console.log(a[5]);
+
+        // without array length method
+        let c = [50, 70, 90, 40, 30, 20, 80];
+
+        function arrayLength(s) {
+            let length = 0;
+            while (s[length] !== undefined)
+                length++;
+            return length;
+        }
+        // console.log(arrayLength(c));
+        // console.log(c.length);
+
+    </script>
+
+    <!-- Q. 2 Multiple ways to print all array elements -->
+    <script>
+        // using array literal
+        // let arr = [10, 20, 30, 40];
+        // for(let i=0; i<a.length; i++){
+        //     // console.log(arr[i]);
+        //     console.log("At index" + " " + i + " " + "value is" + " " + arr[i]);
+        //     // console.log(`At index ${i} value is ${arr[i]}`);
+        // }
+
+        // using array constructor
+        // let s = new Array();
+        // s[0] = "ram";
+        // s[1] = "rehana";
+        // s[2] = "akhil";
+        // s[3] = "karthik";
+        // for(let i=0; i<s.length; i++){
+        //     console.log(s[i]);
+        // }
+
+        // using for in loop
+        // let colors = ["red", "green", "blue"];
+        // for(let a in colors){
+        //     console.log(colors[a]);
+        // }
+
+        // using foreach loop
+        // let col = ["red", "green", "blue", "yellow"];
+        // col.forEach( (value, index) => {
+        //     console.log(value);
+        // });
+
+        // using for of loop
+        let cl = ["red", "green", "blue", "pink"];
+        for (let a of cl) {
+            // console.log(a);
+        }
+
+    </script>
+
+    <!-- Q. 3 Finding average and sum of Array elements -->
+    <script>
+
+        let nums = [1, 2, 3, 4, 5];
+        let l = nums.length;
+        let totalSum = 0;
+        for (let i = 0; i < nums.length; i++) {
+            totalSum += nums[i];  //totalSum = totalSum + nums[i]
+        }
+        // console.log(totalSum);
+
+        let avg = totalSum / l;
+        // console.log(`Average is ${avg}`);
+
+        // using reduce method
+        let numb = [1, 2, 3, 4, 5];
+        let nam = numb.reduce((acc, val) => {
+            return acc + val;
+        }, 0)
+        // console.log(nam);
+
+        let avrg = nam / l;
+        // console.log(avrg);
+
+        //another way using reduce method
+        let numbers = [1, 2, 3, 4, 5];
+        // console.log(numbers.reduce( (myFunc), 20));
+
+        function myFunc(total, num) {
+            return total + num;
+        }
+
+    </script>
+
+    <!-- Q. 4 Even and Odd Position Array elements -->
+    <script>
+
+        // for even position
+        let y = [1, 3, 4, 5, 67];
+        // console.log(questionEven(y));
+
+        function questionEven(array) {
+            let arr = [];
+            for (let i = 0; i < array.length; i++) {
+                if (i % 2 === 0) {
+                    arr.push(array[i])
+                }
+            }
+            return arr;
+        }
+
+        // for odd position
+        let z = [1, 3, 4, 5, 67];
+        // console.log(questionOdd(z));
+
+        function questionOdd(array) {
+            let arr = [];
+            for (let i = 0; i < array.length; i++) {
+                if (i % 2 !== 0) {
+                    arr.push(array[i])
+                }
+            }
+            return arr;
+        }
+
+        // sol with filter method
+        // for even
+        // const numbers = [1,2,3,8,9,12,16]
+        // const even = numbers.filter((item)=>{
+        //     return item%2 === 0;
+        // })
+        // console.log('even numbers',even);
+
+        // // for odd
+        // const numbers1 = [1,2,3,8,9,12,16]
+        // const odd = number1.filter((item)=>{
+        //     return item%2 !== 0;
+        // })
+        // console.log('even numbers',odd);
+
+
+    </script>
+
+    <!-- Q. 5 reverse array -->
+    <script>
+
+        let rev = [10, 34, 56, 78];
+        // console.log(rev.length);
+        // console.log(rev.reverse());
+
+        // for( let i=5; i>=0; i--){
+        //     console.log(i);
+        // }
+
+        for (let i=rev.length-1; i>=0; i--) {
+            // console.log(rev[i]);
+        }
+
+
+    </script>
+
+    <!-- Q. 6 Remove specific element from an array -->
+    <script>
+        // let a1 = [2,5,7]
+        // console.log(a1);
+
+        // const i = a1.indexOf(5);
+        // if(i>-1){
+        //     a1.splice(i,1);
+        // }
+        // console.log(a1);
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

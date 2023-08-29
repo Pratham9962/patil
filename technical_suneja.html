@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // UseCases
+        // 1. Write code to get array of names from given array of users
+        // 2. Get back only active users
+        // 3. Sort users by age descending
+
+        const users = [
+            {
+                id: 1,
+                name: "Ajay",
+                isActive: true,
+                age: 20
+            },
+            {
+                id: 2,
+                name: "Akash",
+                isActive: true,
+                age: 18
+            },
+            {
+                id: 3,
+                name: "Fraz",
+                isActive: true,
+                age: 34
+            },
+            {
+                id: 4,
+                name: "Vipin",
+                isActive: false,
+                age: 30
+            }
+        ];
+
+        // Solution 1 - level 1
+        const names = [];
+        // for(i=0; i<users.length; i++){
+        //     if(users[i].isActive){
+        //     names.push(users[i].name)
+        //     }
+        // }
+        // console.log(names);
+
+        // Solution 2 - level 2
+
+        // users.forEach((user) => {
+        //     if(user.isActive){
+        //     names.push(user.name)
+        //     }
+        // })
+        // console.log(names);
+
+
+        // The map() method returns a new array, whereas the forEach() method does not return new array
+        // The forEach method is similar to for loop, but does not return a value, no need to give indexing in forEach()
+        // The map() method is similar to the forEach() method, but it returns a new array.
+
+        // Solution 3 level 3
+
+        const name1 = users.filter((user) => user.isActive)
+            .sort((user1, user2) => user1.age < user2.age ? 1 : -1)
+            .map((user) => user.name)
+        console.log(name1);
+
+
+            // Sort method
+
+            // users.sort((user1, user2) => user1.age < user2.age ? -1 : 1 )
+            // console.log(users);
+
+            // users.sort((user1, user2) => user1.age < user2.age ? 1 : -1 )
+            // console.log(users);
+
+            // easy way
+            // users.sort((user1, user2) => user1.age - user2.age )
+            // console.log(users);
+
+            // users.sort((user1, user2) => user2.age - user1.age )
+            // console.log(users);
+
+
+
+        // one more eg
+        
+        // const empArr = [
+        // { name: "king", age: 42},
+        // { name: "ali", age: 32},
+        // { name: "ahmad", age: 22},
+        // { name: "zain", age: 62},
+        // { name: "ayesha", age: 52},
+        // { name: "hafsa", age: 28},
+        // { name: "sadi", age: 27},
+        // { name: "rohma", age: 26},
+        // { name: "masooma", age: 25},
+        // ]
+        // const filteredItem = empArr.filter((item)=>{
+        //     return item.age > 30
+        // })
+        // console.log(filteredItem);
+        
+        // const filteredItem = empArr.sort((user1, user2) => user1.age < user2.age ? -1 : 1 ).filter((item)=>{
+        //     return item.age > 30
+        // })
+        //  console.log(filteredItem)
+
+    </script>
+
+    <script>
+
+        // use cases
+        // 1 Check If user with such name exits
+        // 2 Adding element to the Array
+        // 3 Remove Duplicates Elements in the array
+        // 4 Concatenating the array
+
+        // set object, includes(), some(), push(), reduce(), find(), findindex(), concat()
+
+        const userss = [
+            {
+                id: 1,
+                name: "Ajay",
+                isActive: true,
+                age: 20
+            },
+            {
+                id: 2,
+                name: "Akash",
+                isActive: true,
+                age: 18
+            },
+            {
+                id: 3,
+                name: "Fraz",
+                isActive: true,
+                age: 34
+            },
+            {
+                id: 4,
+                name: "Vipin",
+                isActive: false,
+                age: 30
+            }
+        ];
+
+        // 1 Check If user with such name exits
+
+        // level 0
+        // const isNameExit = (name, users) => {
+        //     let exit = false;
+        //     for (let i = 0; i < users.length; i++) {
+        //         if (users[i].name === name) {
+        //             exit = true;
+        //         }
+        //     }
+        //     return exit;
+        // }
+
+        // level 1
+        // const isNameExit = (name, users) => {
+        //     const user = users.find( (user) => user.name === name);
+        //     return Boolean(user);
+        // }
+
+        // level 2
+        // const isNameExit = (name, users) => {
+        //     const index = users.findIndex((user) => user.name === name);
+        //     return index >= 0;
+        // }
+
+        // level 3
+        // const isNameExit = (name, users) => {
+        //     const user = users.some((user) => user.name === name);
+        //     return user;
+        // }
+
+
+        // 2 Adding element to the Array
+        // const arr = [1, 2];
+        // const append=(arr,ele)=>{
+        //     return [...arr,ele]
+
+        // arr.push(ele)
+        // return arr;
+        // }
+        // const newArray = append(arr,3);
+        // console.log(newArray);
+        // console.log(append(arr,3));
+        // console.log(arr);
+
+
+        // 3 Remove Duplicates Elements in the array
+
+        // The set object is a built-in Javascript data structure that allows you to store unique values of any type
+        // the spread operator is used to expand the array into individual arguments
+        // the includes method is used to check if it already exits in the uniqueElements array. if it does not
+
+        // level 0
+        // const arr = [1,2,3,3,4,4,5]
+        // function uniqueArray(){
+        //     const uniqueElements = [];
+
+        //     arr.forEach((ele)=>{
+        //         if(!uniqueElements.includes(ele)){
+        //             uniqueElements.push(ele)
+        //         }
+        //     })
+        //     return uniqueElements;
+        // }
+        // console.log(uniqueArray(arr));
+
+        // level 1
+        // const arr = [1,2,3,3,4,4,5]
+        // function uniqueArray(){
+        //     return [...new Set(arr)]
+        // }
+        // console.log(uniqueArray(arr));
+        // console.log(arr);
+
+        // level 2
+        // const arr = [1,2,3,3,4,4,5]
+        // function uniqueArray(){
+        //     return arr.reduce((acc,ele)=>{
+        //         return acc.includes(ele) ? acc : [...acc,ele]
+        //     },[])
+        // }
+        // console.log(uniqueArray(arr));
+
+        // 4 Concatenating the array
+
+        const mergeArray = (arr1, arr2) => {
+            // return arr1.concat(...arr2);
+            // return [...arr1,...arr2]
+            // arr1.push(...arr2)
+            // return arr1
+        }
+
+        const arr1 = [1];
+        const arr2 = [2, 3];
+        const result = mergeArray(arr1, arr2);
+        // console.log(result, arr1, arr2);
+
+
+
+
+
+    </script>
+</body>
+
+</html>

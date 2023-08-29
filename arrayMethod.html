@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+    // Length
+    let a = [20, 30, 50];  //return type number
+    // console.log(a.length);
+
+    // Shift - to remove first element of array
+    let sh = [20, 30, 40, 50];
+    // console.log(sh.shift()); //20 return value
+    // console.log(sh);  //30 40 50
+
+    let sha = [];
+    // console.log(sha.shift());
+
+    // UnShift - add element to start of an array
+    let unsh = [10, 20, 30, 50, 40];
+    // console.log(unsh.unshift(80, 25));
+    // console.log(unsh);
+
+    // Pop - remove element from end of an array
+    let p = [20, 30, 50, 60];
+    // console.log(p.pop());
+    // console.log(p);
+
+    // push - add element to the end of an array
+    let pu = [10, 20, 30, 40, 50];     //return type new array length
+    // console.log(pu.push(98, 58, 46));
+    // console.log(pu);
+
+    // indexOf - give index of element from array
+    let i = [10, 20, 30];       //return type number
+    // console.log(i.indexOf(20));
+    // console.log(i.indexOf(100));
+    // console.log(i.indexOf(30));
+
+    // lastindexof - give occurence of an array
+    let lt = [20, 50, 30, 40, 60, 40, 20, 70]  //return type number
+    // console.log(lt.lastIndexOf(40));
+    // console.log(lt.lastIndexOf(20));
+
+    // include - check weather the element is in array or not
+    let inc = [20, 50, 30, 40, 60]  //return type boolean
+    // console.log(inc.includes(30));
+    // console.log(inc.includes(200));
+
+    // join - use to convert any array in to string
+    let jo = [20, 50, 30, 40, 60, 40, 20, 70]  //return type string
+    // console.log(jo.join('-'));
+    // console.log(jo.join(''));
+
+    // reverse - print array in reverse order
+    let re = [20, 50, 30, 40, 60, 40, 20, 70]  //return type array
+    // console.log(re.reverse());
+
+    // concat - use to combile/join two or more arrays
+    let arr = [10,20,30];   //return type arary
+    // console.log(arr.concat(40,50));
+
+    // foreach - use to iterate on every value using callback function it gets two argument
+    let foarr = [10,20,30];
+    foarr.forEach(function(value,index){
+        // console.log(value);
+    })
+
+    // every - every is use to check weather all the element will pass the particular condition or not based upon its condition if it is trying to pass condition it gives true or false at list one element is not pass through condition then it also gives false
+    let everyar = [10,30,40,50,60];
+    let ever = everyar.every(function(value,index){
+        return value > 7;
+    })
+    // console.log(ever);
+
+    // some - use to check array based upon condition and it will write to return as boolean value if one of the element is able to satified then it returns true or else all element is satified it returns true
+    let somearr = [10,30,40,50];
+    let somever = somearr.some(function(value,inddex){
+        return value > 45;
+    }) 
+    // console.log(somever);
+
+    // filter
+    let filtarr = [10,40,20,30,60];
+    let filer = filtarr.filter(function(value,index){
+        return value > 30;
+    })
+    // console.log(filer);
+
+    // slice - slice will get two arguments first argument try to represent staring index and second argument represent where to end and we will try to subtract from first to second argument
+    let sl = [10,20,30,40];
+    console.log(sl.slice(1,3)); //gives new array with slice values
+    console.log(sl);  //not change in original array
+
+    let l = ["h","e","l","l","o"];
+    let l1 = [1,2,3,4,5,6,7];
+    console.log(l.slice(1));
+    console.log(l1.slice(3));
+
+    // splice - takes three argument first to where to start, second how many delete, and third update or add values Removes elements from an array and, if necessary, inserts new elements in their place, returning the deleted elements.
+    let pl = [10,20,30,40];
+    console.log(pl.splice(1,2,100,200));  //gives new array with splice values
+    console.log(pl);      //change in original array with given value
+
+    // map - map is use to perfom same operation for every element in an array
+    let m = [1,2,3];
+    let area = [];
+    let are;
+    for(let i=0; i<m.length; i++){
+        are = m[i]*5;
+        area.push(are);
+    }
+    // console.log(area);
+
+    let mapa = [1,2,3,4,5];
+    let mm = mapa.map(function(value,index){
+        return value*5;
+    })
+    // console.log(mm);
+
+    // Reduce
+    const myNums = [1, 2, 3]
+
+    // const myTotal = myNums.reduce(function (acc, currval) {
+        // console.log(`acc: ${acc} and currval: ${currval}`);
+    //     return acc + currval
+    // }, 0)
+
+    const myTotal2 = myNums.reduce((acc, currval) => acc + currval, 0)
+
+    // console.log(myTotal2);
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
